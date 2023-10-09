@@ -5,6 +5,8 @@ import com.Anish.Mant_1And1Many.repository.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OrderService {
 
@@ -14,5 +16,9 @@ public class OrderService {
     public String addOrder(Order newOrder) {
          orderRepo.save(newOrder);
          return "Added a NewProduct";
+    }
+
+    public List<Order> getAllOrder() {
+        return orderRepo.findAll();
     }
 }
